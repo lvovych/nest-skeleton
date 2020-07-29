@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+
+  db:
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: db_first
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
